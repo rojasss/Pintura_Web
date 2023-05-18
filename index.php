@@ -25,92 +25,10 @@
         </div>
       </div>
       <!-- Page Head-->
-      <header class="page-head" data-preset='{"title":"Header","category":"header","reload":true,"id":"header"}'>
-        <!-- RD Navbar Transparent-->
-        <div class="rd-navbar-wrap">
-          <nav class="novi-background rd-navbar rd-navbar-top-panel rd-navbar-light" data-lg-stick-up-offset="79px" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
-            <div class="container">
-              <div class="rd-navbar-inner">
-                <div class="rd-navbar-top-panel">
-                  <div class="left-side">
-                    <ul class="list-inline list-inline-sm list-inline-white text-darker">
-                      <li class="list-inline-item"><a class="text-dark novi-icon fa fa-facebook" href="#"></a></li>
-                      <li class="list-inline-item"><a class="text-dark novi-icon fa fa-twitter" href="#"></a></li>
-                      <li class="list-inline-item"><a class="text-dark novi-icon fa fa-google-plus" href="#"></a></li>
-                      <li class="list-inline-item"><a class="text-dark novi-icon fa fa-youtube" href="#"></a></li>
-                      <li class="list-inline-item"><a class="text-dark novi-icon fa fa-linkedin" href="#"></a></li>
-                    </ul>
-                  </div>
-                  <div class="center">
-                    <address class="contact-info text-left"><span><span class="icon mdi mdi-map-marker novi-icon"></span><a class="text-middle p text-dark" href="#">4578 Marmora St, San Francisco D04 89GR</a></span></address>
-                  </div>
-                  <div class="right-side">
-                    <address class="contact-info text-left"><span><span class="icon mdi mdi-cellphone-android novi-icon"></span><a class="text-middle p font-weight-bold text-dark" href="tel:#">1-800-1234-567</a> <span class="p text-info text-middle">Call me please!</span></span></address>
-                  </div>
-                </div>
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!-- RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
-                  <!-- RD Navbar Top Panel Toggle-->
-                  <button class="rd-navbar-top-panel-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel"><span></span></button>
-                  <!--Navbar Brand-->
-                  <div class="rd-navbar-brand"><a href="../index.php"><img width='240' height='31' src='images/logo-dark.png' alt=''/></a></div>
-                </div>
-                <div class="rd-navbar-menu-wrap">
-                  <div class="rd-navbar-nav-wrap">
-                    <div class="rd-navbar-mobile-scroll">
-                      <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="../index.php"><img width='240' height='31' src='images/logo-dark.png' alt=''/></a></div>
-                      <!-- RD Navbar Nav-->
-                      <ul class="rd-navbar-nav">
-                        <li class="active"><a href="index.php"><span>Home</span></a>
-                        </li>
-                        <li><a href="about-us.php"><span>About</span></a>
-                        </li>
-                        <li><a href="services.php"><span>Services</span></a>
-                          <ul class="rd-navbar-dropdown">
-                            <li><a href="single-service.php"><span class="text-middle">General and Preventative Care</span></a>
-                            </li>
-                            <li><a href="single-service.php"><span class="text-middle">Cosmetic Solutions</span></a>
-                            </li>
-                            <li><a href="single-service.php"><span class="text-middle">Restorative Solutions</span></a>
-                            </li>
-                            <li><a href="single-service.php"><span class="text-middle">Additional Treatments</span></a>
-                            </li>
-                            <li><a href="single-service.php"><span class="text-middle">Orthodontics</span></a>
-                            </li>
-                            <li><a href="single-service.php"><span class="text-middle">Dentures &amp; Denture Repair</span></a>
-                            </li>
-                            <li><a href="single-service.php"><span class="text-middle">Diagnostic &amp; Preventative</span></a>
-                            </li>
-                            <li><a href="single-service.php"><span class="text-middle">Single Service</span></a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="schedule.php"><span>Schedule</span></a>
-                        </li>
-                        <li><a href="blog.php"><span>News</span></a>
-                          <ul class="rd-navbar-dropdown">
-                            <li><a href="blog-single-post.php"><span class="text-middle">Single Blog Post</span></a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="contacts.php"><span>Contacts</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
 
-
-
+      <?php include "header.php"; ?>
         
-        <section data-preset='{"title":"Slider","category":"content, slider","id":"slider"}'>
+      <section data-preset='{"title":"Slider","category":"content, slider","id":"slider"}'>
                   <div class="section parallax-container" data-parallax-img="images/background-01-1920x955.jpg">
                     <div class="parallax-content">
                       <div class="bg-overlay-info">
@@ -118,37 +36,46 @@
                           <!--Swiper-->
                           <div class="swiper-container swiper-slider" data-loop="true" data-dragable="false">
                             <div class="swiper-wrapper text-center">
+                            <?php
+                                  $res = mysqli_query($conn, "SELECT * FROM `informacion` WHERE `estado` = 1 ;");
+                                            if (mysqli_num_rows($res) > 0) {
+                                      while ($fs = mysqli_fetch_array($res)) {
+                           ?>
                               <div class="swiper-slide" id="page-loader">
                                 <div class="swiper-caption swiper-parallax">
                                   <div class="swiper-slide-caption">
                                     <div class="row justify-content-sm-center align-items-sm-center">
-                                      <div class="col-xl-7 col-xxl-5 section-xl-top-15"><img class="img-fluid d-none d-xl-inline-block" src="images/home-01-563x616.png" width="563" height="616" alt=""></div>
+                                      <div class="col-xl-7 col-xxl-5 section-xl-top-15"><img class="img-fluid d-none d-xl-inline-block" src="images/<?php echo $fs['imagen']; ?>" width="563" height="616" alt=""></div>
                                       <div class="col-md-10 col-xl-5 col-xxl-4 text-xl-left offset-top-0">
                                         <blockquote class="quote">
-                                          <h2>“We'll do our best to deliver the best possible healthcare and customer service to you!”</h2>
+                                          <h2><?php echo $fs['titulo']; ?></h2>
                                           <div class="unit unit-lg flex-xl-row unit-spacing-xs offset-top-20">
                                             <div class="unit-left">
                                               <hr class="divider bg-white d-none d-xl-inline-block" style="margin-bottom: 3px;">
                                             </div>
                                             <div class="unit-body">
                                               <div>
-                                                <h5>Dr. Mark Hoffman</h5>
+                                                <h5><?php echo $fs['resumen']; ?></h5>
                                               </div>
                                               <div class="offset-top-10 d-none d-sm-block">
-                                                <p style="color: #e8e8e8;">Founder & head of Intense Dental Clinic</p>
+                                                <p style="color: #e8e8e8;"><?php echo $fs['resumen_m']; ?></p>
                                               </div>
                                             </div>
                                           </div>
                                         </blockquote>
                                         <div class="row justify-content-sm-center justify-content-xl-start offset-top-20 offset-sm-top-50">
-                                          <div class="col-sm-10 col-md-6 col-lg-5 col-xl-7"><a class="btn btn-block btn-primary" href="schedule.php">BOOK AN APPOINTMENT</a></div>
-                                          <div class="col-sm-10 col-md-5 col-lg-3 col-xl-5 offset-top-10 offset-md-top-0"><a class="btn btn-block btn-default" href="#">More Info</a></div>
+                                          <div class="col-sm-10 col-md-6 col-lg-5 col-xl-7"><a class="btn btn-block btn-primary" href="<?php echo $fs['url_01']; ?>">BOOK AN APPOINTMENT</a></div>
+                                          <div class="col-sm-10 col-md-5 col-lg-3 col-xl-5 offset-top-10 offset-md-top-0"><a class="btn btn-block btn-default" href="<?php echo $fs['url_info']; ?>">More Info</a></div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
+                              <?php
+                                       }
+                                  }
+                             ?>
                               <div class="swiper-slide">
                                 <div class="swiper-caption swiper-parallax">
                                   <div class="swiper-slide-caption">
@@ -200,29 +127,30 @@
                     </div>
                   </div>
         </section>
-      </header>
       <!-- Welcome to Intense-->
       <section class="section-98 section-md-110 novi-background" data-preset='{"title":"Content block 1","category":"content, carousel","reload":true,"id":"content-block-1"}'>
         <div class="container">
           <div class="row justify-content-sm-center align-items-sm-center">
             <!-- Simple quote Slider-->
+
+                    <?php
+                                  $res = mysqli_query($conn, "SELECT * FROM `bienvenida` WHERE `estado` = 1 ;");
+                                            if (mysqli_num_rows($res) > 0) {
+                                      while ($fs = mysqli_fetch_array($res)) {
+                           ?>
             <div class="col-md-9 col-xl-6 order-xl-6">
               <div class="owl-carousel owl-carousel-classic owl-carousel-class-light shadow-drop-md" data-items="1" data-nav="false" data-dots="false" data-nav-custom=".owl-custom-navigation">
-                <div>
-                  <!-- Media Elements-->
-                  <div class="embed-responsive embed-custom-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/o6-Iui7NQj8?wmode=transparent"></iframe>
-                  </div>
-                </div>
-                <div><img class="img-fluid element-fullwidth" src="images/home-05-525x350.jpg" width="525" height="350" alt=""></div>
-                <div><img class="img-fluid element-fullwidth" src="images/home-04-525x350.jpg" width="525" height="350" alt=""></div>
+
+                <div><img class="img-fluid element-fullwidth" src="images/<?php echo $fs['imagen_1']; ?>" width="525" height="350" alt=""></div>
+                <div><img class="img-fluid element-fullwidth" src="images/<?php echo $fs['imagen_2']; ?>" width="525" height="350" alt=""></div>
+              
               </div>
             </div>
             <div class="col-md-9 col-xl-6 col-xl-pull-6 text-xl-left offset-top-66 offset-xl-top-0 inset-xl-right-30">
-              <h1>Welcome to Intense</h1>
+              <h1><?php echo $fs['titulo']; ?></h1>
               <hr class="divider bg-mantis hr-xl-left-0">
-              <p class="offset-top-50 text-md-left">Dr. Mark Hoffman's dental clinic welcomes you! We're glad you decided to become our customer for resolving your dental health concerns.</p>
-              <p class="text-md-left">Our main long-term goal is always achieving complex results for your dental health. But in the process, we also keep the focus on giving you the best customer service. We're always making our dental office as safe place as possible!</p>
+              <p class="offset-top-50 text-md-left"><?php echo $fs['descripcion_1']; ?></p>
+              <p class="text-md-left"><?php echo $fs['descripcion_2']; ?></p>
               <div class="owl-custom-navigation owl-customer-navigation offset-top-24">
                 <div class="owl-nav">
                   <div class="owl-prev mdi mdi-chevron-left" data-owl-prev></div>
@@ -230,28 +158,48 @@
                 </div>
               </div>
             </div>
+            <?php
+                                       }
+                                  }
+                             ?>                           
+
           </div>
         </div>
       </section>
       <!-- Why choose Intense?-->
       <section class="section-98 section-md-110 bg-polar novi-background" data-preset='{"title":"Icon block 1","category":"content, icon block","reload":false,"id":"icon-block-1"}'>
-        <div class="container">
-          <h1>Why choose Intense?</h1>
+
+      <div class="container">
+
+          <h1>¿Por qué elegir Intense?</h1>
+
           <hr class="divider bg-mantis">
           <div class="row justify-content-sm-center text-lg-left offset-top-50 offset-xl-top-66">
+          <?php
+                                  $res = mysqli_query($conn, "SELECT * FROM `razones` WHERE `estado` = 1 ;");
+                                            if (mysqli_num_rows($res) > 0) {
+                                      while ($fs = mysqli_fetch_array($res)) {
+                           ?>
             <div class="col-md-9 col-lg-4 offset-xl-0">
               <!-- Icon Box Type 3-->
               <div class="unit align-items-center unit-spacing-xs unit-xs flex-sm-row text-center text-sm-left">
                 <div class="unit-left"><span class="icon novi-icon text-middle icon-xs text-info mdi mdi-monitor"></span></div>
                 <div class="unit-body">
-                  <h4 class="text-spacing-60 text-uppercase font-weight-bold">APPOINTMENT</h4>
+                  <h4 class="text-spacing-60 text-uppercase font-weight-bold"><?php echo $fs['subtitulo']; ?></h4>
                 </div>
               </div>
-              <p class="offset-top-10 text-center text-sm-left">The first step towards a beautiful, healthy smile is to schedule an appointment. Please contact our office by phone or complete the appointment request form.</p>
+              <p class="offset-top-10 text-center text-sm-left">T<?php echo $fs['descripcion']; ?></p>
+             
             </div>
-            <div class="col-md-9 col-lg-4 offset-xl-0 offset-top-50 offset-lg-top-0">
-              <!-- Icon Box Type 3-->
-              <div class="unit align-items-center unit-spacing-xs unit-xs flex-sm-row text-center text-sm-left">
+            <?php
+                                       }
+                                  }
+                             ?> 
+
+            
+          <!--  <div class="col-md-9 col-lg-4 offset-xl-0 offset-top-50 offset-lg-top-0">
+               Icon Box Type 3-->
+             <!-- <div class="unit align-items-center unit-spacing-xs unit-xs flex-sm-row text-center text-sm-left">
                 <div class="unit-left"><span class="icon novi-icon text-middle icon-xs text-info mdi mdi-coin"></span></div>
                 <div class="unit-body">
                   <h4 class="text-spacing-60 text-uppercase font-weight-bold">THE BEST PRICES </h4>
@@ -260,16 +208,17 @@
               <p class="offset-top-10 text-center text-sm-left">Excellent care and high quality implant teeth at a price that any one can afford , making dental implant costs more accessible. Finally, great quality with a great price!</p>
             </div>
             <div class="col-md-9 col-lg-4 offset-xl-0 offset-top-50 offset-lg-top-0">
-              <!-- Icon Box Type 3-->
-              <div class="unit align-items-center unit-spacing-xs unit-xs flex-sm-row text-center text-sm-left">
+               Icon Box Type 3-->
+              <!--<div class="unit align-items-center unit-spacing-xs unit-xs flex-sm-row text-center text-sm-left">
                 <div class="unit-left"><span class="icon novi-icon text-middle icon-xs text-info mdi mdi-magnify"></span></div>
                 <div class="unit-body">
                   <h4 class="text-spacing-60 text-uppercase font-weight-bold">EXPERTISE</h4>
                 </div>
               </div>
               <p class="offset-top-10 text-center text-sm-left">Our team of more than 20 professionals have trained in the UK and abroad, creating a highly skilled, friendly and multi-lingual team to best serve our patients’ needs.</p>
-            </div>
+            </div>-->
           </div>
+                                
         </div>
       </section>
       <!-- Our Services-->
