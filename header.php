@@ -77,7 +77,7 @@
                   ?>
                   <!--<li><a href="about-us.php"><span>About</span></a>
                         </li>
-                        <li><a href="services.php"><span>Services</span></a>
+                        <li><a href="productos.php"><span>Services</span></a>
                                 <?php
                                 $res = mysqli_query($conn, "SELECT * FROM `productos` WHERE `estado` = 1 ;");
                                 if (mysqli_num_rows($res) > 0) {

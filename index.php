@@ -300,7 +300,7 @@
         </div>
         <div class="row justify-content-sm-center">
           <div class="col-sm-8 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-            <div class="inset-left-20 inset-right-20 inset-xxl-left-50 inset-xxl-right-50"><a class="btn btn-block btn-primary" href="services.php">view all services</a></div>
+            <div class="inset-left-20 inset-right-20 inset-xxl-left-50 inset-xxl-right-50"><a class="btn btn-block btn-primary" href="productos.php">view all services</a></div>
           </div>
         </div>
       </div>
