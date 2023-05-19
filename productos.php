@@ -45,12 +45,12 @@
           <div class="bg-overlay-info">
             <div class="container section-34 section-md-85 text-lg-left">
               <div class="d-none d-md-block d-lg-inline-block">
-                <h1>Services</h1>
+                <h1>Productos</h1>
               </div>
               <div class="pull-md-right offset-md-top-10 offset-lg-top-20">
                 <ul class="p list-inline list-inline-dashed">
                   <li class="list-inline-item"><a href="index.php">Home</a></li>
-                  <li class="list-inline-item">Services</li>
+                  <li class="list-inline-item">Productos</li>
                 </ul>
               </div>
             </div>
@@ -58,10 +58,10 @@
         </div>
       </div>
     </section>
-    <!-- Our Services-->
+    <!--Productos-->
     <section class="section-98 section-md-top-110 section-md-bottom-124 novi-background" data-preset='{"title":"Content block 4","category":"content","reload":false,"id":"content-block-4"}'>
       <div class="container container-wide">
-        <h1>Our Services</h1>
+        <h1>Productos</h1>
         <hr class="divider bg-mantis">
         <p class="offset-top-50">We’re pleased to offer a wide range of dental services</p>
         <div class="row justify-content-sm-center offset-top-66 text-md-left">
