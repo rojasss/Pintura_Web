@@ -1,30 +1,38 @@
 <!-- Page Footer-->
 <!-- Footer variant 3-->
 <footer class="section-relative section-top-66 section-bottom-34 page-footer novi-background" data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}'>
+    <?php
+
+    $res = mysqli_query($conn, "SELECT * FROM `configuracion`;");
+
+    $fs = mysqli_fetch_array($res)
+
+    ?>
+
     <div class="container">
         <div class="row justify-content-md-center text-xl-left">
             <div class="col-md-12">
                 <div class="row justify-content-sm-center">
                     <div class="col-sm-10 col-md-3 col-md-6 col-xl-3">
                         <!-- Footer brand-->
-                        <div class="footer-brand"><a href="index.php"><img width='138' height='52' src='images/logo.png' alt='' /></a></div>
+                        <div class="footer-brand"><a href="index.php"><img width='138' height='52' src='images/<?php echo $fs['logofooter']; ?>' alt='' /></a></div>
                         <address class="contact-info offset-top-20 p">
                             <div>
                                 <dl>
-                                    <dt class="font-weight-bold"> Hola Address:</dt>
-                                    <dd class="text-dark d-xl-block">4578 Marmora St, <span class="d-xl-block">San Francisco</span> <span class="d-xl-block">D04 89GR.</span></dd>
+                                    <dt class="font-weight-bold">Address:</dt>
+                                    <dd class="text-dark d-xl-block"><?php echo $fs['direccion']; ?></dd>
                                 </dl>
                             </div>
                             <div>
                                 <dl class="offset-top-0">
                                     <dt class="font-weight-bold">Telephone:</dt>
-                                    <dd><a class="text-dark" href="tel:#">1-800-1234-567</a></dd>
+                                    <dd><a class="text-dark" href="tel:#"><?php echo $fs['telefono']; ?></a></dd>
                                 </dl>
                             </div>
                             <div>
                                 <dl class="offset-top-0">
                                     <dt class="font-weight-bold">E-mail:</dt>
-                                    <dd><a class="text-dark" href="mailto:#">mail@demolink.org</a></dd>
+                                    <dd><a class="text-dark" href="mailto:#"><?php echo $fs['email']; ?></a></dd>
                                 </dl>
                             </div>
                         </address>
@@ -77,10 +85,10 @@
                             </div>
                             <div class="offset-top-20 text-sm-center text-lg-left">
                                 <ul class="list-inline">
-                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-facebook icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
-                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-twitter icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
-                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-google-plus icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
-                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-linkedin icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
+                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-facebook icon-xxs icon-circle icon-darkest-filled" href="<?php echo $fs['facebook']; ?>"></a></li>
+                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-twitter icon-xxs icon-circle icon-darkest-filled" href="<?php echo $fs['twitter']; ?>"></a></li>
+                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-google-plus icon-xxs icon-circle icon-darkest-filled" href="<?php echo $fs['google']; ?>"></a></li>
+                                    <li class="list-inline-item"><a class="icon novi-icon fa fa-linkedin icon-xxs icon-circle icon-darkest-filled" href="<?php echo $fs['linkedin']; ?>"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -97,7 +105,7 @@
         </div>
     </div>
     <div class="container offset-top-50">
-        <p>Intense Dental Clinic &copy; <span id="copyright-year"></span> . <a class="text-darker" href="#">Privacy Policy</a></p>
+        <p><?php echo $fs['copyrigth']; ?></p>
     </div>
 </footer>
 </div><a class="builder-button" href="https://ld-wp2.template-help.com/novi-builder/intense-dental-clinic/" target="_blank"><img src="images/novi-icon-26x26.png" width="26" height="26" alt=""><span>Try builder</span></a>
